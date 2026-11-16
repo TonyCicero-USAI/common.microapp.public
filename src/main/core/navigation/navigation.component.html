@@ -1,0 +1,146 @@
+
+<!-- TOGGLE -->
+<button class="sidebar-toggle" *ngIf="!isNavigationExpanded" type="button" mat-button (click)="showHide()">
+    <mat-icon aria-label="Expand the left navigation" aria-hidden="false">menu</mat-icon>
+</button>
+
+<!-- SIDEBAR -->
+ <div class="d-flex" style="height: 100%;">
+    <!-- PRIMARY -->
+    <div class="sidebar-primary" *ngIf="isNavigationExpanded">
+        <!-- MENU -->
+        <div class="menu">
+            <!-- HEADER -->
+            <div class="menu-header d-flex align-items-center">    
+                <!-- CLOSE -->
+                <!-- <mat-icon role="button" aria-fo class="menu-close" (click)="showHide()" aria-label="Dhow/Hide" aria-hidden="false">chevron_left</mat-icon> -->
+                <div class="main-nav-logo">
+                    <div class="no-padding row no-gutters align-items-center">
+                        <img class="col-auto menu-header-icon" src="assets/icons/app.logo.svg" onerror="this.onerror=null; this.src='assets/images/icons/itemicon.svg'" alt="Application Logo"/>
+                        <div class="col-auto ml-2 menu-header-label">{{config.appName}}</div>
+                    </div>
+                </div>
+                <button type="button" mat-icon-button matTooltip="Close left navigation" (click)="showHide()">
+                    <mat-icon aria-label="Collapse the left navigation" aria-hidden="false">chevron_left</mat-icon>
+                </button>
+            </div>
+            <!-- MENU -->         
+            <div class="menu-items">
+                <ng-container *ngFor="let item of config.navigation; index as i">
+                    <!-- DIVIDER -->
+                    <div class="divider" *ngIf="(item.type) && (item.type === 'Divider') && config.navigation[i + 1]?.permissioned">
+                        <div class="line"></div>
+                    </div>
+                    <!-- ITEM -->
+                    <div *ngIf="(!item.type || item.type === 'Link') && !item.children">
+                        <button 
+                            class="menu-item w-100 div" 
+                            [ngClass]="{ 'selected-menu-item': checkMatch(item.active) }" 
+                            [id]="item.title" 
+                            type="button" mat-button 
+                            *ngIf="!item.permissioned" 
+                            [routerLink]="item.link" 
+                            [queryParams]="item.params" 
+                            (click)="hideSecondary()">
+                            <div class="menu-item-row" *ngIf="isNavigationExpanded">
+                                <mat-icon class="menu-item-icon-active" fontSet="material-symbols-outlined" *ngIf="checkMatch(item.active)" aria-label="Active" aria-hidden="false">{{item.icons?.active}}</mat-icon>
+                                <mat-icon class="menu-item-icon-inactive" fontSet="material-symbols-outlined" *ngIf="!checkMatch(item.active)" aria-label="Inactive" aria-hidden="false">{{item.icons?.inactive}}</mat-icon>
+                                <!-- <div class="col-auto menu-item-icon-active" [style.-webkit-mask]="'url(' + item.icons?.active + ')'" *ngIf="checkMatch(item.active)"></div>
+                                <div class="col-auto menu-item-icon-inactive" [style.-webkit-mask]="'url(' + item.icons?.inactive + ')'" *ngIf="!checkMatch(item.active)"></div> -->
+                                <div class="menu-item-label" [ngClass]="{ 'active-text': checkMatch(item.active) }">{{ item.title }}</div>
+                            </div>
+                        </button>
+                        <button 
+                            class="menu-item w-100 div" 
+                            [ngClass]="{ 'selected-menu-item': checkMatch(item.active) }" 
+                            [id]="item.title" 
+                            type="button" 
+                            mat-button 
+                            *ngIf="item.permissioned" 
+                            [componentIf]="{val: item.link}" 
+                            [routerLink]="item.link" 
+                            [queryParams]="item.params" 
+                            (click)="hideSecondary()">
+                            <div class="menu-item-row" *ngIf="isNavigationExpanded">
+                                <mat-icon class="menu-item-icon-active" fontSet="material-symbols-outlined" *ngIf="checkMatch(item.active)" aria-label="Active" >{{item.icons?.active}}</mat-icon>
+                                <mat-icon class="menu-item-icon-inactive" fontSet="material-symbols-outlined" *ngIf="!checkMatch(item.active)" aria-label="Inactive" >{{item.icons?.inactive}}</mat-icon>
+                                <!-- <div class="col-auto menu-item-icon-active" [style.-webkit-mask]="'url(' + item.icons?.active + ')'" *ngIf="checkMatch(item.active)"></div>
+                                <div class="col-auto menu-item-icon-inactive" [style.-webkit-mask]="'url(' + item.icons?.inactive + ')'" *ngIf="!checkMatch(item.active)"></div> -->
+                                <div class="menu-item-label" [ngClass]="{ 'active-text': checkMatch(item.active) }" attr.aria-label="Left Navigation {{ item.title }}">{{ item.title }}</div>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- CHILDREN -->
+                    <ng-container *ngIf="item.children">
+                        <button 
+                            class="menu-item w-100 div" 
+                            [ngClass]="{ 'selected-menu-item': checkMatch(item.active) }" 
+                            type="button" 
+                            mat-button 
+                            [id]="item.title"  
+                            *ngIf="!item.permissioned" 
+                            [routerLink]="item.link" [queryParams]="item.params"
+                            (click)="selectParent(item)">
+                            <div class="menu-item-row" *ngIf="isNavigationExpanded">
+                                <mat-icon class="menu-item-icon-active" fontSet="material-symbols-outlined" *ngIf="checkMatch(item.active)" aria-label="Active" aria-hidden="false">{{item.icons?.active}}</mat-icon>
+                                <mat-icon class="menu-item-icon-inactive" fontSet="material-symbols-outlined" *ngIf="!checkMatch(item.active)" aria-label="Inactive" aria-hidden="false">{{item.icons?.inactive}}</mat-icon>
+                                <!-- 
+                                <div class="col-auto menu-item-icon-active" [style.-webkit-mask]="'url(' + item.icons?.active + ')'" *ngIf="checkMatch(item.active)"></div>
+                                <div class="col-auto menu-item-icon-inactive" [style.-webkit-mask]="'url(' + item.icons?.inactive + ')'" *ngIf="!checkMatch(item.active)"></div> 
+                                -->
+                                <div class="menu-item-label" [ngClass]="{ 'active-text': checkMatch(item.active) }">{{ item.title }}</div>
+                                <mat-icon class="ml-auto">chevron_right</mat-icon>
+                            </div>
+                        </button>
+                        <button 
+                            class="menu-item w-100 div" 
+                            [ngClass]="{ 'selected-menu-item': checkMatch(item.active) }" 
+                            type="button" 
+                            mat-button  
+                            *ngIf="item.permissioned" 
+                            [id]="item.title" 
+                            [componentIf]="{val: item.link}" 
+                            [routerLink]="item.link" [queryParams]="item.params"
+                            (click)="selectParent(item)">
+                            <div class="menu-item-row" *ngIf="isNavigationExpanded">
+                                <mat-icon class="menu-item-icon-active" fontSet="material-symbols-outlined" *ngIf="checkMatch(item.active)" aria-label="Active">{{item.icons?.active}}</mat-icon>
+                                <mat-icon class="menu-item-icon-inactive" fontSet="material-symbols-outlined" *ngIf="!checkMatch(item.active)" aria-label="Inactive">{{item.icons?.inactive}}</mat-icon>
+                                <!-- 
+                                <div class="col-auto menu-item-icon-active" [style.-webkit-mask]="'url(' + item.icons?.active + ')'" *ngIf="checkMatch(item.active)"></div>
+                                <div class="col-auto menu-item-icon-inactive" [style.-webkit-mask]="'url(' + item.icons?.inactive + ')'" *ngIf="!checkMatch(item.active)"></div> 
+                                -->
+                                <div class="menu-item-label" [ngClass]="{ 'active-text': checkMatch(item.active) }" attr.aria-label="Left Navigation {{ item.title }}">{{ item.title }}</div>
+                            </div>
+                        </button>
+                    </ng-container>
+                </ng-container>
+            </div>
+            <!-- THEME -->         
+            <app-theme-picker></app-theme-picker>
+        </div>
+    </div>
+    <!-- SECONDARY -->
+    <div class="sidebar-secondary" *ngIf="isNavigationSecondaryExpanded">
+        <!-- MENU -->
+        <div class="menu">
+
+            <!-- HEADER -->
+            <div class="menu-header d-flex align-items-center justify-content-between">    
+                <!-- CLOSE -->
+                <div class="">
+
+                </div>
+                <button type="button" matTooltip="Close secondary navigation" mat-icon-button (click)="hideSecondary()">
+                    <mat-icon  aria-label="Close secondary navigation" aria-hidden="false">chevron_left</mat-icon>
+                </button>
+            </div>
+
+            <!-- MENU -->
+            <div class="menu-items" *ngIf="parent?.children?.length > 0">
+                <ng-container *ngFor="let item of parent.children; index as i">
+        
+                </ng-container>
+            </div>
+        </div>
+    </div>
+ </div>

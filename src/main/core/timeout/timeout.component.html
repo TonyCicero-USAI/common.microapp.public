@@ -1,0 +1,19 @@
+<div class="center">
+    <div class="info">
+        <div class="info-title">
+            <div class="title">WARNING</div>
+            <div class="subtitle">SESSION TIMEOUT</div>
+        </div>
+        <div class="info-section">
+            <p>
+                Your session has timed out and will be terminated in <b>{{countdown}}</b> seconds. 
+                Once that happens, you will be redirected to the login page. If you want to 
+                continue working just click on the "Continue" button.
+            </p>
+        </div>  
+        <div class="action-btns right">
+            <button type="button" mat-stroked-button color="accent" class="mr-3" (click)="continue()" cdkFocusInitial>CONTINUE</button>
+            <button type="button" mat-flat-button color="accent" (click)="logout()">LOG OUT</button>
+        </div>
+    </div>
+</div>

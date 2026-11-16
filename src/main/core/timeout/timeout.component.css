@@ -1,0 +1,14 @@
+.title {
+  font-size: 50pt;
+  color: white;
+}
+
+.command {
+  position: relative;
+  top: 25px;
+  left: 175px;
+}
+
+.link {
+  color: white;
+}

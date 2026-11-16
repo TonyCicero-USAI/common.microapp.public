@@ -1,0 +1,69 @@
+.app-main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;;
+    max-height: 100vh;
+    .app-main-body{
+        height: 100%;
+        width: 100vw;
+    }
+    &.has-maintenance-banner{
+        .app-main-body {
+            height: calc(100vh - 39px);
+        }
+    }
+    &.has-organization-banner{
+        .app-main-body {
+            height: calc(100vh - 25px);
+        }
+    }
+    &.has-maintenance-banner.has-organization-banner {
+        .app-main-body {
+            height: calc(100vh - 64px);
+        }
+    }
+}
+.maintenance-banner {
+    width: 100%;
+    background-color: #ffcc00;
+    color: #000;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.maintenance-banner.lockdown {
+    background-color: var(--warn-color);
+}
+
+.app-main-content {
+    width: 100%;
+    &.sidebar-expanded.sidebar-visibility{
+        width: calc(100vw - 200px);
+    }
+    &.sidebar-visibility{
+        width: calc(100vw - 85px);
+    }
+    &.has-header{
+        .app-main-content-view{
+            height: calc(100% - 50px);
+        }
+    }
+    .app-main-content-view{
+        height: 100%;
+        overflow: auto;
+    }
+}
+
+
+@media only screen and (max-width: 576px) {
+     .app-main-content {
+        &.sidebar-expanded.sidebar-visibility,
+        &.sidebar-expanded,
+        &.sidebar-visibility {
+            width: 100%;
+        }
+     }
+ }

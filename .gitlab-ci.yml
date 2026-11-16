@@ -1,0 +1,9 @@
+stages:
+  - test
+  - build
+  - deploy
+variables:
+  NODE_VERSION: 18.20.3-alpine3.20
+include:
+  - project: 'infrastructure/cicd-scripts'
+    file: 'other/common.microapp-docker-build.yaml'

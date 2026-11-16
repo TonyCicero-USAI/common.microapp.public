@@ -1,0 +1,131 @@
+<!-- LARGE DEVICES -->
+
+<div class="header-full" *ngIf="current && organization">
+    <!-- BANNER -->
+    <!-- 
+    <div class="header-full-banner" *ngIf="organization.metadata?.banner">
+        {{ organization.metadata.banner}}
+    </div> 
+    -->
+    <!-- TOOLBAR -->
+    <div class="header-full-toolbar">
+        <button type="button" class="skip-navigation-button" mat-flat-button (click)="focusMain()" tabindex="1">
+            Skip Navigation to Main Content
+        </button>
+
+        <!-- ENVIRONMENT -->
+        <div class="environment blink">
+            {{ environment }}
+        </div>
+        <!-- ORGANIZATION -->
+        <div class="organization">
+            <span>
+                {{ organization.orgName }}
+            </span>
+            <span class="pl-2" *ngIf="configuration?.subscription?.version">
+                VER. {{ configuration.subscription.version }}
+            </span>
+            <span class="pl-2" *ngIf="configuration?.subscription.numUsers">
+                {{ configuration.subscription.numUsers }} USERS
+            </span>
+        </div>
+        <!-- WELCOME -->
+        <div class="welcome">
+            Welcome, {{ current.firstName }}
+        </div>
+        <!-- ICONS -->
+        <!-- <div class="icons">
+            <div>
+                <button type="button" class="nav-button d-flex" mat-icon-button matTooltip="Logout" routerLink="/logout" routerLinkActive="active">
+                    <mat-icon class="material-symbols-outlined" aria-label="Global Navigation Logout" aria-hidden="false">
+                        power_settings_new
+                    </mat-icon>
+                </button>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+<!-- SMALL DEVICES -->
+
+<div class="header-small" *ngIf="current && organization">
+    <div class="icon">
+        <button *ngIf="!isMenuOpenForMobile" type="button" mat-icon-button (click)="open();" aria-label="Main Menu">
+            <mat-icon aria-label="Menu" aria-hidden="false">menu</mat-icon>
+        </button>
+    </div>
+    <div class="main-menu" *ngIf="isMenuOpenForMobile">
+        <div class="icon">
+            <button type="button" mat-icon-button aria-label="Clear" (click)="close();">
+                <mat-icon aria-label="Close" aria-hidden="false">close</mat-icon>
+            </button>
+        </div>
+        <!-- GENERAL -->
+        <div class="main-menu-overview">
+            <div class="main-menu-organization">{{ organization.orgName }}</div>
+            <div class="main-menu-welcome">Welcome, {{ current.firstName }}</div>
+            <div class="main-menu-environment blink">{{ environment }}</div>
+            <div class="main-menu-banner" *ngIf="organization.metadata?.banner">
+                <div class="scrolling-text">{{ organization.metadata.banner }}</div>
+            </div>
+        </div>
+        <!-- ICONS -->
+        <div class="px-4">
+            <!-- MODULES FROM SIDE NAV -->
+            <ng-container *ngFor="let item of config.navigation">
+                <!-- LINK -->
+                <ng-container *ngIf="(!item.type || item.type === 'Link') && !item.children">
+                    <button mat-button class="w-100 div" [componentIf]="{val: item.permissioned ? item.link : '*'}"
+                        [routerLink]="item.link" routerLinkActive="active" #rla="routerLinkActive" (click)="close()">
+                        <mat-icon class="menu-item-icon-active" fontSet="material-symbols-outlined"
+                            attr.aria-label="{{item.title}}" aria-hidden="false">{{rla.isActive ? item.icons?.active :
+                            item.icons?.inactive}} </mat-icon>
+                        {{(item.title.toLowerCase() === 'settings' ?'APPLICATION ': '') + item.title }}
+                    </button>
+                </ng-container>
+                <!-- PARENT -->
+                <ng-container *ngIf="item?.children?.length > 0">
+                    <button mat-button class="w-100 div" [componentIf]="{val: item.permissioned ? item.link : '*'}"
+                        [routerLink]="item.link" routerLinkActive="active" #rla="routerLinkActive" (click)="selectParent(item)">
+                        <mat-icon class="menu-item-icon-active" fontSet="material-symbols-outlined"
+                            attr.aria-label="{{item.title}}" aria-hidden="false">{{rla.isActive ? item.icons?.active :
+                            item.icons?.inactive}} </mat-icon>
+                        {{ item.title }}
+                    </button>
+                </ng-container>
+            </ng-container>
+            <div class="divider mx-3"></div>
+            <!-- MODE -->
+            <app-theme-picker></app-theme-picker>
+            <div class="divider mx-3"></div>
+            <!-- LOGOUT -->
+            <button mat-button class="w-100 div" (click)="close();" routerLink="/logout" routerLinkActive="active">
+                <mat-icon class="material-symbols-outlined mr-3" aria-label="Profile" aria-hidden="false"
+                    matTooltip="My Applications">
+                    power_settings_new
+                </mat-icon>
+                LOGOUT
+            </button>
+        </div>
+    </div>
+    <!-- SECONDARY -->
+    <div class="main-menu" *ngIf="isMenuOpenForMobileSecondary">
+        <div class="icon">
+            <button type="button" mat-icon-button (click)="closeSecondary();">
+                <mat-icon aria-label="Close secondary menu" aria-hidden="false">close</mat-icon>
+            </button>
+        </div>
+        <!-- MODULES FROM SIDE NAV -->
+        <ng-container *ngFor="let item of parent.children">
+            <!-- LINK -->
+            <div *ngIf="!item.type">
+                <button mat-button class="w-100 div" [componentIf]="{val: item.permissioned ? item.link : '*'}"
+                    (click)="navigate(item.link)">
+                    <mat-icon class="mr-3" aria-label="Link" aria-hidden="false">circle</mat-icon>
+                    <span class="uppercase" *ngIf="item.title.toLowerCase() !== 'settings'">{{ item.title
+                        }}</span>
+                </button>
+            </div>
+        </ng-container>
+    </div>
+</div>

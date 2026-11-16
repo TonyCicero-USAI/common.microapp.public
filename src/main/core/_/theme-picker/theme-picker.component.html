@@ -1,0 +1,8 @@
+<div class="d-flex theme-modes align-items-center mb-3">
+    <div class="label mr-2">THEME: </div>
+    <div *ngFor="let mode of themeModes" [ngClass]="{'active-mode': mode.value === preference?.theme}"
+        class="mode">
+        <!-- <mat-icon class="material-symbols-outlined" matTooltip="{{mode.name}} Theme" (click)="selectTheme(mode)">{{mode.icon}}</mat-icon> -->
+        <button role="button" class="div cursor-pointer mode-svg" [innerHTML]="mode.svg" matTooltip="{{mode.name}} Theme" (click)="selectTheme(mode)" attr.aria-label="Switch to {{mode.name}} Theme" aria-hidden="false"></button>
+    </div>
+</div>

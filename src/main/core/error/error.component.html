@@ -1,0 +1,22 @@
+<ng-template #errorDialog>
+    <div class="center">
+        <div class="info">
+            <div class="info-title">
+                <div class="title uppercase">Something went wrong :(</div>
+                
+            </div>
+            <div class='info-section'>
+                <p>              
+                    We are working to fix the problem. Rest assured that we’ll be up and running shortly.
+                    <br><br>
+                    Thank you for your patience!
+                    <br>
+                    If you need immediate assistance, click <a href="mailto: helpdesk@usai.io">here</a> to reach our customer service team.
+                </p>
+            </div>    
+            <div class="action-btns pt-3" mat-dialog-actions>
+                <button type="button" class="ok-btn" mat-flat-button  color="accent" (click)="closeAll()">OK</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

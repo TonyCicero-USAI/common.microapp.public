@@ -1,0 +1,17 @@
+/*****************************************************************************************************
+ * TRANSFORMATION                                                                                             *
+ *****************************************************************************************************/
+
+//#region TRANSFORMATION
+
+.scrolling-text {
+    animation: scrollText 25s linear infinite; /* Apply the animation */
+    /* Adjust the duration (10s) and timing function (linear) as needed */
+}
+
+@keyframes scrollText {
+    0% { transform: translateX(0); } /* Start position */
+    100% { transform: translateX(-100%); } /* End position (scroll left) */
+}
+
+//#endregion

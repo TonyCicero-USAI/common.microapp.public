@@ -1,0 +1,563 @@
+/*****************************************************************************************************
+ * MATERIAL STYLES                                                                                   *
+ *****************************************************************************************************/
+
+//#region MATERIAL STYLES
+
+/*#region BOTTOM SHEET CONTAINER */
+
+.mat-bottom-sheet-container {
+  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2),
+    0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+  background: #fff;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+/*#endregion */
+
+/*#region BUTTON MDC*/
+
+.mat-mdc-button {
+  color: var(--text-color);
+}
+
+.mat-mdc-button.mat-accent:not(:disabled) {
+  color: var(--secondary-color);
+}
+
+.mat-mdc-unelevated-button.mat-primary:not(:disabled) {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+}
+
+.mat-mdc-outlined-button.mat-accent:not(:disabled) {
+  border-color: var(--text-color);
+  color: var(--text-color);
+}
+
+.mat-mdc-outlined-button[disabled],
+.mat-mdc-unelevated-button[disabled],
+.mat-mdc-button.mat-accent[disabled],
+.mat-mdc-button.mat-primary[disabled],
+.mat-mdc-button.mat-warn[disabled],
+.mat-mdc-button[disabled][disabled],
+.mat-mdc-stroked-button.mat-accent[disabled],
+.mat-mdc-stroked-button.mat-primary[disabled],
+.mat-mdc-stroked-button.mat-warn[disabled],
+.mat-mdc-stroked-button[disabled][disabled] {
+  // color: rgba(255, 255, 255, 0.26) !important;
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.mat-mdc-icon-button.mat-accent[disabled],
+.mat-mdc-icon-button.mat-primary[disabled],
+.mat-mdc-icon-button.mat-warn[disabled],
+.mat-mdc-icon-button[disabled][disabled] {
+  color: rgba(255, 255, 255, 0.26) !important;
+}
+
+.mat-mdc-button.mat-primary .mat-button-focus-overlay,
+.mat-mdc-button-base.mat-primary .mat-button-focus-overlay,
+.mat-mdc-icon-button.mat-primary .mat-button-focus-overlay,
+.mat-mdc-stroked-button.mat-primary .mat-button-focus-overlay {
+  background-color: var(--primary-color);
+}
+
+.mat-mdc-button.mat-accent .mat-button-focus-overlay,
+.mat-mdc-button-base.mat-accent .mat-button-focus-overlay,
+.mat-mdc-icon-button.mat-accent .mat-button-focus-overlay,
+.mat-mdc-stroked-button.mat-accent .mat-button-focus-overlay {
+  background-color: var(--secondary-color);
+}
+
+.mat-mdc-button.mat-warn .mat-button-focus-overlay,
+.mat-mdc-button-base.mat-warn .mat-button-focus-overlay,
+.mat-mdc-icon-button.mat-warn .mat-button-focus-overlay,
+.mat-mdc-stroked-button.mat-warn .mat-button-focus-overlay {
+  background-color: var(--warn-color);
+}
+
+.mat-mdc-button[disabled] .mat-button-focus-overlay,
+.mat-mdc-icon-button[disabled] .mat-button-focus-overlay,
+.mat-mdc-stroked-button[disabled] .mat-button-focus-overlay {
+  background-color: transparent;
+}
+
+.mat-mdc-button-focus-overlay {
+  background: #000;
+}
+
+.mat-mdc-stroked-button:not([disabled]) {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.mat-mdc-fab,
+.mat-mdc-flat-button,
+.mat-mdc-mini-fab,
+.mat-mdc-raised-button {
+  color: var(--text-color);
+  background-color: #fff;
+}
+
+.mat-mdc-fab.mat-primary,
+.mat-mdc-flat-button.mat-primary,
+.mat-mdc-mini-fab.mat-primary,
+.mat-mdc-raised-button.mat-primary {
+  color: var(--text-color);
+}
+
+.mat-mdc-fab.mat-warn,
+.mat-mdc-flat-button.mat-warn,
+.mat-mdc-mini-fab.mat-warn,
+.mat-mdc-raised-button.mat-warn {
+  color: var(--text-color);
+}
+
+.mat-mdc-fab.mat-accent[disabled],
+.mat-mdc-fab.mat-primary[disabled],
+.mat-mdc-fab.mat-warn[disabled],
+.mat-mdc-mdc-fab[disabled][disabled],
+.mat-mdc-flat-button.mat-accent[disabled],
+.mat-mdc-flat-button.mat-primary[disabled],
+.mat-mdc-flat-button.mat-warn[disabled],
+.mat-mdc-flat-button[disabled][disabled],
+.mat-mdc-mini-fab.mat-accent[disabled],
+.mat-mdc-mini-fab.mat-primary[disabled],
+.mat-mdc-mini-fab.mat-warn[disabled],
+.mat-mdc-mini-fab[disabled][disabled],
+.mat-mdc-raised-button.mat-accent[disabled],
+.mat-mdc-raised-button.mat-primary[disabled],
+.mat-mdc-raised-button.mat-warn[disabled],
+.mat-mdc-raised-button[disabled][disabled] {
+  color: var(--disabled-color);
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.mat-mdc-fab.mat-primary,
+.mat-mdc-unelevated-button.mat-primary,
+.mat-mdc-flat-button.mat-primary,
+.mat-mdc-mini-fab.mat-primary,
+.mat-mdc-raised-button.mat-primary {
+  background-color: var(--primary-color);
+}
+
+.mat-mdc-fab.mat-accent,
+.mat-mdc-flat-button.mat-accent,
+.mat-mdc-mini-fab.mat-accent,
+.mat-mdc-raised-button.mat-accent {
+  background-color: var(--secondary-color);
+  color: #000C36;
+}
+
+.mat-mdc-fab.mat-warn,
+.mat-mdc-flat-button.mat-warn,
+.mat-mdc-mini-fab.mat-warn,
+.mat-mdc-raised-button.mat-warn {
+  background-color: var(--warn-color);
+}
+
+.mat-mdc-button .mat-ripple-element,
+.mat-mdc-icon-button .mat-ripple-element,
+.mat-mdc-stroked-button .mat-ripple-element {
+  opacity: 0.1;
+  background-color: currentColor;
+}
+
+.mat-mdc-fab.mat-primary .mat-ripple-element,
+.mat-mdc-flat-button.mat-primary .mat-ripple-element,
+.mat-mdc-mini-fab.mat-primary .mat-ripple-element,
+.mat-mdc-raised-button.mat-primary .mat-ripple-element {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mat-mdc-fab.mat-accent .mat-ripple-element,
+.mat-mdc-flat-button.mat-accent .mat-ripple-element,
+.mat-mdc-mini-fab.mat-accent .mat-ripple-element,
+.mat-mdc-raised-button.mat-accent .mat-ripple-element {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mat-mdc-fab.mat-warn .mat-ripple-element,
+.mat-mdc-flat-button.mat-warn .mat-ripple-element,
+.mat-mdc-mini-fab.mat-warn .mat-ripple-element,
+.mat-mdc-raised-button.mat-warn .mat-ripple-element {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mat-mdc-flat-button:not([class*="mat-elevation-z"]),
+.mat-mdc-stroked-button:not([class*="mat-elevation-z"]) {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.14),
+    0 0 0 0 rgba(0, 0, 0, 0.12);
+}
+
+.mat-mdc-raised-button:not([class*="mat-elevation-z"]) {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.mat-mdc-raised-button:not([disabled]):active:not([class*="mat-elevation-z"]) {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.mat-mdc-raised-button[disabled]:not([class*="mat-elevation-z"]) {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.14),
+    0 0 0 0 rgba(0, 0, 0, 0.12);
+}
+
+.mat-mdc-fab:not([class*="mat-elevation-z"]),
+.mat-mdc-mini-fab:not([class*="mat-elevation-z"]) {
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+}
+
+.mat-fab:not([disabled]):active:not([class*="mat-elevation-z"]),
+.mat-mini-fab:not([disabled]):active:not([class*="mat-elevation-z"]) {
+  box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2),
+    0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12);
+}
+
+.mat-mdc-fab[disabled]:not([class*="mat-elevation-z"]),
+.mat-mdc-mini-fab[disabled]:not([class*="mat-elevation-z"]) {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.14),
+    0 0 0 0 rgba(0, 0, 0, 0.12);
+}
+
+.mat-mdc-outlined-button:not([disabled]) {
+  border-color: currentColor !important;
+}
+
+.close-btn {
+  color: var(--text-color);
+  // z-index: 2000 !important;
+}
+
+/*#endregion */
+
+/*#region BUTTON TOGGLE */
+
+.mat-button-toggle-group,
+.mat-button-toggle-standalone {
+  box-shadow:
+    0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* default */
+.mat-button-toggle-button {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+/* checked */
+.mat-button-toggle-checked .mat-button-toggle-button {
+  background-color: var(--secondary-color) !important;
+}
+
+/* checked text */
+.mat-button-toggle-checked .mat-button-toggle-label-content {
+  color: var(--primary-color) !important;
+}
+
+/* hover */
+.mat-button-toggle:hover .mat-button-toggle-button {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* checked hover */
+.mat-button-toggle-checked:hover .mat-button-toggle-button {
+  background-color: var(--secondary-color) !important;
+}
+
+/* separators */
+.mat-button-toggle-group-appearance-standard
+  .mat-button-toggle
+  + .mat-button-toggle {
+  border-left: solid 1px rgba(255, 255, 255, 0.12);
+}
+
+/* disabled */
+.mat-button-toggle-disabled {
+  background-color: #2a2a2a !important;
+}
+
+.mat-button-toggle-disabled .mat-button-toggle-label-content {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* borders */
+.mat-button-toggle-group-appearance-standard,
+.mat-button-toggle-standalone.mat-button-toggle-appearance-standard {
+  border: solid 1px rgba(255, 255, 255, 0.12);
+}
+
+/*#endregion */
+
+/*#region CALENDAR */
+
+.mat-datepicker-actions {
+  background-color: var(--primary-color);
+  padding: 5px;
+}
+
+.mat-datepicker-content .mat-calendar-next-button,
+.mat-datepicker-content .mat-calendar-previous-button,
+.mat-datepicker-toggle {
+  color: var(--text-color);
+
+  .mat-mdc-icon-button:disabled {
+    color: var(--disabled-color);
+  }
+
+  .mat-mdc-icon-button {
+    color: var(--text-color);
+  }
+}
+
+.mat-calendar-body-label {
+  color: var(--text-color);
+}
+
+.cdk-keyboard-focused .mat-calendar-body-active>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+.cdk-program-focused .mat-calendar-body-active>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.mat-calendar-body-disabled>.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.mat-calendar-body-disabled>.mat-calendar-body-selected {
+  background-color: var(--primary-color-40);
+}
+
+.mat-calendar-body-today.mat-calendar-body-selected {
+  box-shadow: inset 0 0 0 1px #fff;
+}
+
+.mdc-text-field__input::-webkit-calendar-picker-indicator {
+  filter: invert(100%);
+}
+
+.mat-calendar-body {
+  .mat-calendar-body-cell:focus .mat-focus-indicator::before {
+    content: normal !important;
+  }
+}
+
+/*#endregion */
+
+/*#region CHECKBOX */
+
+.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background {
+  background-color: var(--secondary-color) !important;
+}
+.mdc-checkbox__native-control[disabled]:indeterminate~.mdc-checkbox__background {
+  background-color: var(--mdc-checkbox-disabled-selected-icon-color) !important;
+}
+
+.mdc-checkbox__mixedmark {
+  border-color: var(--primary-color) !important;
+}
+
+.mat-mdc-checkbox-disabled.mat-mdc-checkbox-checked .mdc-checkbox__background {
+  // background-color: var(--secondary-color) !important;
+  // opacity: 0.5;
+}
+
+.mdc-checkbox__background {
+  border-color: var(--secondary-color) !important;
+}
+
+.mat-pseudo-checkbox,
+.mat-pseudo-checkbox.mat-pseudo-checkbox-indeterminate {
+  border-color: var(--secondary-color) !important;
+}
+
+.mat-mdc-option-multiple {
+  .mat-pseudo-checkbox.mat-pseudo-checkbox-checked,
+  .mat-pseudo-checkbox.mat-pseudo-checkbox-indeterminate {
+    border-color: var(--secondary-color) !important;
+    background-color: var(--secondary-color) !important;
+    color: var(--primary-color) !important;
+  }
+}
+
+.mat-mdc-option.mat-mdc-option-multiple.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text {
+  color: var(--text-color);
+}
+
+.mdc-checkbox--disabled {
+  // color: var(--disabled-color);
+  // opacity: 0.5
+}
+
+input.role-checkbox[type=checkbox] {
+  accent-color: var(--secondary-color);
+}
+
+input.role-checkbox[type=checkbox]:indeterminate {
+  accent-color: var(--secondary-color);
+}
+
+.indeterminate-state {
+  width: 16px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--primary-color);
+  position: absolute;
+  align-self: center;
+}
+
+input.role-checkbox[type=checkbox]:not(:indeterminate):not(:checked):not(:disabled) {
+  appearance: none;
+  // background-color: transparent;
+  border: var(--secondary-color) 2px solid;
+  border-radius: 3px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+/*#endregion */
+
+/*#region CHIP */
+
+// .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) {
+//   background-color: var(--secondary-color) !important;
+//   color: var(--primary-color);
+// }
+
+.mat-mdc-chip-list-disabled .mat-mdc-standard-chip.mat-mdc-chip-disabled {
+  background-color: rgba(128, 134, 155, 0.3) !important;
+}
+
+/*#endregion */
+
+/*#region CUSTOM PROGRESS BAR */
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: transparent;
+  border-right: 1px solid var(--primary-color);
+  position: relative;
+}
+
+.progress-bar-fill:hover {
+  border-right: none;
+  transform: scale(1.3);
+  background: linear-gradient(to right, #4A518F, #4ACBDC) !important;
+  border: #fff 1px solid;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.custom-progress-bar {
+  background-color: white;
+  position: relative;
+}
+
+.custom-progress-bar-container {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(to right, #4A518F, #4ACBDC) !important;
+
+  .progress-bar-fill:last-child {
+    border-right: none;
+  }
+}
+
+.nowrap {
+  white-space: nowrap !important;
+}
+
+.custom-tooltip {
+  max-width: unset !important;
+}
+
+/*#endregion */
+
+/*#region DATEPICKER */
+
+.mat-datepicker-content {
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.mat-datepicker-content.mat-accent .mat-calendar-body-selected {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.mat-datepicker-content.mat-accent .mat-calendar-body-disabled>.mat-calendar-body-selected {
+  background-color: var(--secondary-40-color);
+}
+
+.mat-datepicker-content.mat-accent .mat-calendar-body-today.mat-calendar-body-selected {
+  box-shadow: inset 0 0 0 1px #fff;
+}
+
+.mat-datepicker-content.mat-warn .mat-calendar-body-selected {
+  background-color: var(--warn-color);
+  color: #fff;
+}
+
+.mat-datepicker-content.mat-warn .mat-calendar-body-disabled>.mat-calendar-body-selected {
+  background-color: rgba(244, 67, 54, 0.4);
+}
+
+.mat-datepicker-content.mat-warn .mat-calendar-body-today.mat-calendar-body-selected {
+  box-shadow: inset 0 0 0 1px #fff;
+}
+
+.mat-datepicker-content-touch {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.14),
+    0 0 0 0 rgba(0, 0, 0, 0.12);
+}
+
+.mat-datepicker-toggle-active {
+  color: var(--primary-color);
+}
+
+.mat-datepicker-toggle-active.mat-accent {
+  color: var(--secondary-color);
+}
+
+.mat-datepicker-toggle-active.mat-warn {
+  color: var(--warn-color);
+}
+
+/*#endregion */
+
+/*#region DIALOG */
+
+.dialog {
+  .dialog-title {
+    color: var(--text-color);
+  }
+
+  .dialog-section {
+    color: var(--text-color);
+  }
+}
+
+.mat-mdc-dialog-container {
+  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2),
+    0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+  background: var(--background-1);
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: var(--background-1) !important;
+}
+
+/*#endregion */
+
+//#endregion

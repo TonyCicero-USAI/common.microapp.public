@@ -1,0 +1,51 @@
+.detail-error-panel{
+  &.mat-expansion-panel:not([class*=mat-elevation-z]){
+    box-shadow: unset;
+    &.mat-expanded{
+      box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    }
+  }
+  &.mat-expansion-panel{
+    background-color: transparent;
+    &.mat-expanded{
+      background-color: white;
+    }
+  }
+  .mat-expansion-panel-header-title{
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: #035287;
+    ;
+  }
+  .mat-column-warrant{
+    max-width: 100px;
+  }
+  .mat-column-averagePalt{
+    max-width: 70px;
+  }
+}
+
+
+.container {
+  .title {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .container-content {
+    display: flex;
+    justify-content: space-around;
+    .icon {
+      padding-right: 20px;
+      .mat-icon {
+        font-size: 100px;
+        color: red;
+        width: 100px;
+        height: 100px;
+      }
+    }
+  } 
+}
+
+.ok-btn {
+  border-radius: 3px !important;
+}

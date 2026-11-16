@@ -1,0 +1,319 @@
+@import "light.material.less";
+@import "light.variables.less";
+
+/*****************************************************************************************************
+ * COMMON CODE STYLES                                                                                *
+ *****************************************************************************************************/
+ 
+//#region COMMON CODE STYLES
+
+
+/*#region BUTTONS */
+
+
+
+.metric-box-active {
+  box-shadow: 5px 10px 20px 0px rgba(0, 12, 54, 0.15);
+}
+
+.metric-box:hover {
+  box-shadow: 5px 10px 20px 0px rgba(0, 12, 54, 0.15);
+  cursor: pointer;
+}
+
+/*#endregion */
+
+/*#region CARDS */
+
+.card-box {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+/*#endregion*/
+
+/*#region DASHBOARDS */
+
+
+
+
+
+// TOGGLE SWITCH
+
+
+// TREND
+
+
+
+/*#endregion */
+
+/*#region DIALOGS */
+
+/*#endregion */
+
+/*#region DRAG AND DROP */
+
+
+/*#endregion */
+
+/*#region DROPDOWN TABLE */
+
+// .stickyDropDownBtn {
+//   position: sticky;
+//   bottom: 0;
+//   background-color: white;
+//   border-radius: 10px;
+//   z-index: 10;
+// }
+
+/*#endregion */
+
+/*#region FIELDS TABLE */
+
+// .field-cell {
+//   border: 2px solid #0B3757 !important;
+//   background-color: white !important;
+// }
+
+.cell-true {
+  background-color: var(--secondary-color) !important;
+  border: 2px solid white !important;
+}
+
+// used on settings/fields page
+.cell-false {
+  border: 2px solid white !important;
+}
+
+/*#endregion */
+
+
+
+
+
+/*#endregion */
+
+/*#region HEADER */
+
+.global-header {
+  background-color: white;
+
+  .toolbar {
+    .environment {
+      color: rgba(28, 80, 117, 0.85);
+      border-right: solid 1px lightblue;
+    }
+
+    .organization {
+      color: rgba(28, 80, 117, 0.85);
+      border-right: solid 1px lightblue;
+    }
+
+    .welcome {
+      color: rgba(28, 80, 117, 0.85);
+    }
+
+    .icons {
+    }
+  }
+}
+
+/*#endregion */
+
+/*#region HEADINGS */
+
+
+/*#endregion */
+
+/*#region LAYOUT */
+
+.textarea-readonly {
+  background-color: #f7f7f7; 
+  border: 1px solid #a1a1a1;
+}
+
+/*#endregion */
+
+/*#region LINKS */
+
+a {
+  color: var(--primary-color);
+}
+
+a:active {
+  color: var(--secondary-color);
+}
+
+a:visited {
+  color: var(--primary-color);
+}
+
+.link {
+  color: #4d5572 !important;
+}
+
+.link:hover {
+  color: black !important;
+}
+
+.link-secondary {
+  color: black;
+  cursor: pointer;
+}
+
+.link-secondary:hover {
+  color: var(--secondary-color);
+}
+
+/*#endregion */
+
+/*#region MESSAGE WHEN NO DATA FOUND */
+
+.no-data {
+  background-color: #F7F7F7;
+  color: #000C36;
+  font-weight: 500;
+}
+
+/*#endregion */
+
+/*#region MISCELLANEOUS */
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.bottom-border {
+  border-bottom: solid 1px #A2A2A2;
+}
+
+.custom-panel {
+  background-color: var(--background-5);
+}
+
+.document-list {
+  background: var(--background-5);
+}
+
+.inline-alert {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 3px;
+}
+
+.list {
+  .list-option {
+    background-color: var(--background-5) !important;
+    color: #052339 !important;
+  }
+
+  .list-option:hover {
+      background-color: white !important;
+  }
+
+  .list-option-selected {
+    background-color: white !important;
+}
+}
+
+.options {
+  .option {
+    border: 1px solid #80869B;
+    .option-icon {
+      color: #000C3650;
+    }
+    .option-icon:hover {
+      color: #000C36;
+    }
+  }
+  .option:hover {
+    border: 1px solid #000C36;
+  }
+  .option-selected {
+    background: #FFF;
+    border: 1px solid transparent;
+    box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.05), 0px 2px 2px 0px rgba(0, 12, 54, 0.20);
+  }
+  .option-edit {
+    border: 1px solid #80869B;
+  }
+}
+
+.outline {
+  color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.37);
+}
+
+/*#endregion */
+
+/*#region OVERLAYS */
+
+.cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+
+
+.asset-total {
+  color: black;
+}
+
+/*#endregion */
+
+/*#region PAGE */
+
+.breadcrumb {
+  color: #dadada;
+  .label {
+      color:#4D5572  ;
+  }
+}
+
+.breadcrumb-separator {
+    color: #dadada !important;
+}
+
+.main {
+
+  .main-content {
+
+    .page {
+      .page-info {
+        .page-info-item {
+          border: 1px solid var(--background-5);
+          background-color: var(--background-5);
+        }
+      }
+    }
+
+    .editor {
+      .editor-info {
+        .editor-info-item {
+          border: 1px solid var(--background-5);
+          background-color: var(--background-5);
+        }
+      }
+    }
+  }
+}
+
+/*#endregion */
+
+.file-table-row {
+  background-color: var(--background-5);
+}
+
+.error-row {
+  border: 1px solid var(--warn-color);
+}
+
+.header-row-second-group {
+  button {
+    color: @black !important;
+  }
+}
+
+/*#endregion */
+
+//#endregion
+

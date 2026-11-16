@@ -1,0 +1,153 @@
+.spinner_overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 225px;
+    height: 225px;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 1000;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    border-radius: 100%;
+    box-shadow: 5px 10px 20px rgba(36, 169, 186, 0.15), -15px -10px 20px rgba(43, 133, 145, 0.05);
+  }
+  
+  .loader-fade {
+    .container, .spinner_overlay, .text {
+      animation-name: fadeOut;
+      animation-duration: 1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  
+  }
+  
+  .container {
+      z-index: 1001;
+      height: auto;
+      margin: 0 auto;
+      position: relative;
+      float: initial;
+      justify-content: center;
+      display: block;
+  }
+  
+  .back-spinner {
+      position: absolute;
+      transform-origin: center;
+      z-index: 1001;
+  
+      width: 250px;
+      height: 250px;
+  }
+  .back-circle {
+      width: 596px;
+      height: 268px;
+      margin: 10px;
+      // background: white;
+      border-radius: 100%;
+      // position: absolute;
+      z-index: 1002;
+  }
+  
+  .pedals {
+    position: relative;
+    transform: scale(0.15);
+    margin-right: 55px;
+    margin-top: 70px;
+    .pedal-1 {
+      opacity: 0;
+      transform-origin: bottom right;
+      position: absolute;
+      top: 50px;
+      left: 120px;
+      animation-name: rotationP1;
+      z-index: 1005;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+    .pedal-2 {
+      opacity: 0;
+      transform-origin: bottom right;
+      position: absolute;
+      top: 50px;
+      left: 120px;
+      animation-name: rotationP2;
+      z-index: 1004;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+    .pedal-3 {
+      opacity: 0;
+      transform-origin: bottom right;
+      position: absolute;
+      top: 50px;
+      left: 120px;
+      animation-name: rotationP3;
+      z-index: 1003;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+  }
+  }
+  
+  @keyframes rotationP1 {
+      0% {
+        transform: rotate(15deg);
+        opacity: 0;
+      }
+      33% {
+          opacity: 1;
+        }
+      100% {
+        opacity: 0;
+        transform: rotate(15deg);
+      }
+  }
+  
+  @keyframes rotationP2 {
+      0% {
+        transform: rotate(15deg);
+        opacity: 0;
+      }
+      33% {
+          transform: rotate(35deg);
+          opacity: 1;
+        }
+      100% {
+        transform: rotate(35deg);
+        opacity: 0;
+      }
+  }
+  
+  @keyframes rotationP3 {
+      0% {
+        transform: rotate(15deg);
+        opacity: 0;
+      }
+      33% {
+          transform: rotate(55deg);
+          opacity: 1;
+        }
+      100% {
+        transform: rotate(55deg);
+        opacity: 0;
+      }
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .text {
+    position: relative;
+    z-index: 1001;
+    text-align: center;
+    top: 60px;
+  }

@@ -1,0 +1,195 @@
+/*****************************************************************************************************
+ * THIRD PARTY COMPONENTS                                                                            *
+ *****************************************************************************************************/
+
+//#region THIRD PARTY COMPONENTS
+
+/*#region TinyMCE Editor*/
+
+.tox-tinymce {
+  border: 1px solid var(--line-color) !important;
+  border-radius: 5px !important;
+
+  .tox:not(.tox-tinymce-inline) .tox-editor-header {
+    padding: 0px;
+  }
+}
+
+.tox {
+  padding-bottom: 5px !important;
+
+  .tox-statusbar__resize-handle {
+    height: 0px;
+    padding-top: 5px !important;
+  }
+}
+
+.tox {
+  .tox-tbtn {
+    background: none !important;
+  }
+
+  .tox-tbtn:hover {
+    background: #cce2fa !important;
+  }
+
+  .tox-tbtn--bespoke {
+    background-color: #f7f7f7 !important;
+  }
+
+  .tox-statusbar {
+    background-color: rgba(0, 0, 0, 0) !important;
+    color: var(--text-color) !important;
+
+    .tox-statusbar__path-item {
+      color: var(--text-color) !important;
+    }
+
+    .tox-statusbar__wordcount,
+    .tox-statusbar__resize-handle svg {
+      color: var(--text-color) !important;
+      fill: var(--text-color) !important;
+    }
+  }
+
+  .tox-toolbar {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .tox-toolbar-overlord svg,
+  .tox-editor-header svg {
+    fill: var(--text-color) !important;
+  }
+
+  .tox-tbtn:hover svg,
+  .tox-tbtn:focus svg,
+  .tox-tbtn--enabled svg {
+    fill: #052339 !important;
+  }
+
+  .tox-tbtn--active,
+  .tox-tbtn--enabled,
+  .tox-tbtn--enabled:focus,
+  .tox-tbtn--enabled:hover {
+    //for version 7.0.0
+    background: #a6ccf7 !important;
+  }
+
+  .tox-tbtn--disabled svg,
+  .tox-tbtn--disabled:hover svg,
+  .tox-tbtn--disabled:focus svg {
+    //not needed in version 7.0.0?
+    color: var(--text-color) !important;
+    fill: var(--text-color) !important;
+  }
+
+  .tox-editor-header {
+    background-color: transparent !important;
+  }
+
+  .tox-toolbar-overlord {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+  }
+}
+
+/*#endregion TinyMCE Editor*/
+
+//#region GO JS
+
+.gojs {
+  background: var(--background-1);
+
+  .tabs {
+    .tab {
+      background: var(--background-2);
+      width: 250px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      border-top-right-radius: 10px 10px;
+    }
+  }
+
+  .toolbar {
+    background: linear-gradient(72deg, var(--background-2) 0%, var(--background-2) 94.71%);
+    box-shadow: 5px 10px 20px 0px rgba(52, 87, 231, 0.15);
+    width: 100%;
+    height: 50px;
+    top: 50px;
+    z-index: 9;
+
+    .advanced-toggle {
+      position: absolute;
+      right: 20px;
+    }
+
+    .mat-mdc-button:not(:disabled) {
+      color: inherit;
+    }
+  }
+}
+
+.gojs-diagram {
+  background: var(--background-1);
+
+  // background-image: radial-gradient(var(--primary-color-lighter) 1px, transparent 0);
+  background-image: radial-gradient(hsl(from var(--accent-color) h s calc(l - 32)) 1px, transparent 0);
+  background-size: 15px 13px;
+  background-position: -19px -19px;
+  height: -webkit-fill-available;
+  width: 100%;
+
+  >div {
+    overflow: hidden !important;
+  }
+}
+
+.gojs-palette {
+  height: 100%;
+  min-height: 300px;
+}
+
+// .gojs-toolbar {
+//   background-color: var(--background-1);
+//   position: absolute;
+//   z-index: 99;
+//   max-width: 350px;
+//   right: 20px;
+//   top: 200px;
+
+//   .group-button {
+//       button {
+//           width: 125px !important;
+//       }
+//   }
+
+//   .palette-button {
+//     background: var(--secondary-color);
+//     color: var(--primary-color);
+//     height: 100px !important;
+//     width: 125px !important;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     border-radius: 5px;
+//     border: 2px solid;
+//     cursor: pointer;
+//     .palette-icon {
+//       font-size: 30px;
+//       height: 30px;
+//       width: 30px;
+//     }
+//   }
+
+//   .palette-view {
+//     border: #80869B 1px solid;
+//     width: 300px;
+//   }
+// }
+
+// #endregion GO JS
+
+//#endregion THIRD PARTY COMPONENTS
